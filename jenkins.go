@@ -355,8 +355,8 @@ func (jenkins *Jenkins) GetComputer(name string) (computer Computer, err error) 
 
 // hasParams returns a boolean value indicating if the job is parameterized
 func hasParams(job Job) bool {
-	for _, action := range job.Actions {
-		if len(action.ParameterDefinitions) > 0 {
+	for _, action := range job.Property {
+		if len(action.Parameters) > 0 {
 			return true
 		}
 	}
